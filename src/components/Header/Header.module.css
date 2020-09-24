@@ -1,0 +1,11 @@
+header {
+	grid-area: header;
+	padding: 10px;
+	display: grid;
+	align-items: center;
+	background-color: cornflowerblue;
+}
+
+header img {
+	width: 45px;
+}
