@@ -16,3 +16,21 @@ ul {
 		"nav content";
 	justify-content: center;
 }
+
+.app-wrapper-content {
+	grid-area: content;
+	background-color: cornflowerblue;
+}
+
+.app-wrapper-content figure {
+	width: 100%;
+   height: 300px;
+   margin: 0;
+}
+
+.app-wrapper-content figure img {
+	width: 100%;
+   height: 100%;
+   object-fit: cover;
+	display: block;
+}

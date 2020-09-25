@@ -1,4 +1,4 @@
-header {
+.header {
 	grid-area: header;
 	padding: 10px;
 	display: grid;
@@ -6,6 +6,6 @@ header {
 	background-color: cornflowerblue;
 }
 
-header img {
+.header img {
 	width: 45px;
 }
