@@ -3,16 +3,23 @@ import classes from "./MyPosts.module.css";
 import Post from "./Post/Post";
 
 const MyPosts = () => {
+
+	let postsData = [
+		{ id: 1, message: "Hi, how are you?", likesCount: "9" },
+		{ id: 2, message: "It's my first post", likesCount: "15" },
+	]
+
+	const postElements = postsData.map(post => <Post message={post.message} likesCount={post.likesCount} key={post.id}/>)
+
 	return (
-		<div>
-			<div>My post</div>
-			<div>
-				<textarea name="new-post" cols="30" rows="5"></textarea>
+		<div className={classes.myPosts}>
+			<h3>My post</h3>
+			<div style={{marginBottom: "20px"}}>
+				<textarea placeholder="Укажите ваш текст поста"></textarea>
 				<button>Add post</button>
 			</div>
 			<div className={classes.posts}>
-				<Post message="Hi, how are you?"  likesCount="20"/>
-				<Post message="It's my first post" likesCount="30"/>
+				{postElements}
 			</div>
 		</div>
 	);
