@@ -3,3 +3,9 @@
    grid-template-columns: 2fr 10fr;
    padding: 20px;
 }
+.dialogsItems {
+   /* background-color: #f7f7f7; */
+   padding: 20px;
+   /* border-radius: 8px;
+   box-shadow: -3px -3px 6px #557fc9, 3px 3px 6px #73abff; */
+}
