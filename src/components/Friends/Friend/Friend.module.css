@@ -1,0 +1,29 @@
+.friend {
+   display: flex;
+   align-items: center;
+   margin: 20px 0;
+}
+
+.avatar {
+   width: 60px;
+   height: 60px;
+   margin: 0 10px 0 0;
+   border-radius: 50%;
+   overflow: hidden;
+}
+
+.avatar img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   display: block;
+}
+
+.firsName {
+   color: #f7f7f7;
+   margin: 5px 0;
+}
+.lastName {
+   color: #f7f7f7;
+   margin: 5px 0;
+}

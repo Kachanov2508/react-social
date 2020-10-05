@@ -12,7 +12,7 @@ const App = (props) => {
 		<BrowserRouter>
 			<div className="app-wrapper">
 				<Header img="https://bower.io/img/bower-logo.png" />
-				<Navbar />
+				<Navbar friends={props.state}/>
 				<div className="app-wrapper-content">
 					<Route
 						path="/profile"

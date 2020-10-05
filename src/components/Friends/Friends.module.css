@@ -1,0 +1,13 @@
+.friends {
+   padding: 0 20px;
+   margin-top: 60px;
+}
+
+.heading {
+   color: #f7f7f7;
+   font-family: inherit;
+   font-weight: 400;
+   font-size: 19px;
+   text-transform: uppercase;
+   /* text-align: center; */
+}
