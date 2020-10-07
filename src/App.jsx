@@ -7,26 +7,24 @@ import Dialogs from "./components/Dialogs/Dialogs";
 import { BrowserRouter, Route } from "react-router-dom";
 
 const App = (props) => {
-
 	return (
 		<BrowserRouter>
 			<div className="app-wrapper">
 				<Header img="https://bower.io/img/bower-logo.png" />
-				<Navbar friends={props.state}/>
+				<Navbar friends={props.state} />
 				<div className="app-wrapper-content">
 					<Route
 						path="/profile"
 						render={() => (
-							<Profile state={props.state.profilePage} />
+							<Profile
+								profilePage={props.state.profilePage}
+								dispatch={props.dispatch}
+							/>
 						)}
 					/>
 					<Route
 						path="/dialogs"
-						render={() => (
-							<Dialogs
-								state={props.state.dialogPage}
-							/>
-						)}
+						render={() => <Dialogs state={props.state.dialogPage} />}
 					/>
 				</div>
 			</div>
