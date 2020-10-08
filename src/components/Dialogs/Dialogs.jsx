@@ -17,7 +17,6 @@ const Dialogs = (props) => {
 			<div className={classes.messages}>
 				{messageElements}
 			</div>
-
 		</div>
 	);
 };

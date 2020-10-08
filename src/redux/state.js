@@ -1,3 +1,6 @@
+const ADD_POST = "ADD-POST";
+const APDATE_NEW_POST_TEXT = "APDATE-NEW-POST-TEXT";
+
 const store = {
 	_state: {
 		dialogPage: {
@@ -89,19 +92,42 @@ const store = {
 		this._callSubscriber = observer;
 	},
 
+	// dispatch(action) {
+	// 	if (action.type === "ADD-POST") {
+	// 		let newPost = {
+	// 			id: 5,
+	// 			message: this._state.profilePage.newPostText,
+	// 			likesCount: 0,
+	// 		};
+	// 		this._state.profilePage.postsData.push(newPost);
+	// 		this._state.profilePage.newPostText = "";
+	// 		this._callSubscriber(this._state);
+	// 	} else if (action.type === "APDATE-NEW-POST-TEX") {
+	// 		this._state.profilePage.newPostText = action.newText;zzAZAA
+	// 		this._callSubscriber(this._state);
+	// 	}
+	// },
+
 	dispatch(action) {
-		if (action.type === "ADD-POST") {
-			let newPost = {
-				id: 5,
-				message: this._state.profilePage.newPostText,
-				likesCount: 0,
-			};
-			this._state.profilePage.postsData.push(newPost);
-			this._state.profilePage.newPostText = "";
-			this._callSubscriber(this._state);
-		} else if (action.type === "APDATE-NEW-POST-TEX") {
-			this._state.profilePage.newPostText = action.newText;
-			this._callSubscriber(this._state);
+		switch (action.type) {
+			case ADD_POST:
+				let newPost = {
+					id: 5,
+					message: this._state.profilePage.newPostText,
+					likesCount: 0,
+				};
+				this._state.profilePage.postsData.push(newPost);
+				this._state.profilePage.newPostText = "";
+				this._callSubscriber(this._state);
+				break;
+
+			case APDATE_NEW_POST_TEXT:
+				this._state.profilePage.newPostText = action.newText;
+				this._callSubscriber(this._state);
+				break;
+
+			default:
+				break;
 		}
 	},
 };
@@ -109,3 +135,14 @@ const store = {
 window.state = store;
 
 export default store;
+
+export const addPostActionCreator = () => ({ type: ADD_POST });
+
+export const apdateNewPostTexActionCreator = (text) => {
+	return {
+		type: APDATE_NEW_POST_TEXT,
+		newText: text,
+	};
+};
+
+// action это обьект у которого обязательно есть свойство type
