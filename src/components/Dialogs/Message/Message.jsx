@@ -1,5 +1,6 @@
 import React from "react";
 import classes from "./Message.module.css";
+import MessageItem from "./MessageItem/MessageItem"
 
 const Message = (props) => {
 	let message = React.createRef();
@@ -11,15 +12,7 @@ const Message = (props) => {
 
 	return (
 		<div className={classes.message}>
-			{/* {props.message} */}
-			<div className={classes.sentMessage}>
-				<ul>
-					<li>Привет</li>
-					<li>Добрый день!</li>
-					<li>Какие курсы можно пройти?</li>
-					<li>Разработка на ReactJS</li>
-				</ul>
-			</div>
+			<MessageItem message={props.message}/>
 			<textarea placeholder="текст сообщения" ref={message}></textarea>
 			<button className={classes.button} onClick={setMessage}>
 				Отправить

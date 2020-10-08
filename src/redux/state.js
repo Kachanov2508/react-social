@@ -10,42 +10,66 @@ const store = {
 					name: "Татьяна",
 					img:
 						"https://avatarko.ru/img/avatar/28/devushka_brunetka_cosplay_27741.jpg",
+					messageData: [
+						{ id: 1, message: "Привет Татьяна" },
+						{ id: 2, message: "Добрый день Татьяна" },
+						{ id: 3, message: "Разработка на реакт" },
+					],
 				},
 				{
 					id: 2,
 					name: "Николай",
 					img:
 						"https://avatarko.ru/img/avatar/31/muzhchina_shlyapa_galstuk_30949.jpg",
+					messageData: [
+						{ id: 1, message: "Привет Николай" },
+						{ id: 2, message: "Добрый день Николай" },
+						{ id: 3, message: "Разработка на реакт" },
+					],
 				},
 				{
 					id: 3,
 					name: "Александра",
 					img: "https://avatarko.ru/img/avatar/1/Batman_siluet.jpg",
+					messageData: [
+						{ id: 1, message: "Привет" },
+						{ id: 2, message: "Добрый Александра день" },
+						{ id: 3, message: "Разработка на  Александрареакт" },
+					],
 				},
 				{
 					id: 4,
 					name: "Евгений",
 					img:
 						"https://avatarko.ru/img/avatar/4/siluet_volk_luna_3945.jpg",
+					messageData: [
+						{ id: 1, message: "Привет Евгений" },
+						{ id: 2, message: "Добрый день Евгений" },
+						{ id: 3, message: "Разработка на реакт" },
+					],
 				},
 				{
 					id: 5,
 					name: "Дмитрий",
 					img:
 						"https://shopsticker.ru/image/cache/catalog/image/rock/1-800x800.png",
+					messageData: [
+						{ id: 1, message: "Привет Дмитрий" },
+						{ id: 2, message: "Добрый день Дмитрий" },
+						{ id: 3, message: "Разработка на реакт" },
+					],
 				},
 				{
 					id: 6,
 					name: "Мария",
 					img:
 						"https://avatarko.ru/img/avatar/3/devushka_brunetka_2748.jpg",
+					messageData: [
+						{ id: 1, message: "Привет Мария" },
+						{ id: 2, message: "Добрый де Мариянь" },
+						{ id: 3, message: "Разработка на реакт" },
+					],
 				},
-			],
-
-			messageData: [
-				{ id: 1, message: "Привет" },
-				{ id: 2, message: "Добрый день" },
-				{ id: 3, message: "Разработка на реакт" },
 			],
 		},
 
