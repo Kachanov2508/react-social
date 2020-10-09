@@ -1,8 +1,8 @@
-.dialog {
+.users {
    padding: 10px;
 }
 
-.dialog figure {
+.users figure {
    width: 50px;
    height: 50px;
    border-radius: 50%;
@@ -11,14 +11,14 @@
 
 }
 
-.dialog figure img {
+.users figure img {
    width: 100%;
    height: 100%;
    object-fit: cover;
    display: block;
 }
 
-.dialog a {
+.users a {
    text-decoration: none;
    display: flex;
    align-items: center;

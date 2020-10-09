@@ -6,14 +6,14 @@ const store = {
 		dialogPage: {
 			dialogsData: [
 				{
-					id: 1,
+					id: "1",
 					name: "Татьяна",
 					img:
 						"https://avatarko.ru/img/avatar/28/devushka_brunetka_cosplay_27741.jpg",
 					messageData: [
-						{ id: 1, message: "Привет Татьяна" },
-						{ id: 2, message: "Добрый день Татьяна" },
-						{ id: 3, message: "Разработка на реакт" },
+						{ id: 1, message: "Здравствуйте Татьяна" },
+						{ id: 2, message: "Разнообразный и богатый опыт укрепление ." },
+						{ id: 3, message: "Таким образом постоянный количественный рост и сфера нашей " },
 					],
 				},
 				{
@@ -23,8 +23,8 @@ const store = {
 						"https://avatarko.ru/img/avatar/31/muzhchina_shlyapa_galstuk_30949.jpg",
 					messageData: [
 						{ id: 1, message: "Привет Николай" },
-						{ id: 2, message: "Добрый день Николай" },
-						{ id: 3, message: "Разработка на реакт" },
+						{ id: 2, message: "Не следует, однако забывать" },
+						{ id: 3, message: "Идейные соображения высшего порядка, а также постоянный количественный рост и сфера нашей активности обеспечивает широкому кругу (специалистов) участие в формировании направлений прогрессивного развития." },
 					],
 				},
 				{
@@ -32,9 +32,9 @@ const store = {
 					name: "Александра",
 					img: "https://avatarko.ru/img/avatar/1/Batman_siluet.jpg",
 					messageData: [
-						{ id: 1, message: "Привет" },
-						{ id: 2, message: "Добрый Александра день" },
-						{ id: 3, message: "Разработка на  Александрареакт" },
+						{ id: 1, message: "Хай Александра" },
+						{ id: 2, message: "Задача организации, в особенности же укрепление и развитие структуры " },
+						{ id: 3, message: "Не следует, однако забывать" },
 					],
 				},
 				{
@@ -43,9 +43,9 @@ const store = {
 					img:
 						"https://avatarko.ru/img/avatar/4/siluet_volk_luna_3945.jpg",
 					messageData: [
-						{ id: 1, message: "Привет Евгений" },
-						{ id: 2, message: "Добрый день Евгений" },
-						{ id: 3, message: "Разработка на реакт" },
+						{ id: 1, message: "Хелоу Евгений" },
+						{ id: 2, message: "Товарищи! постоянное информационно-пропагандистское " },
+						{ id: 3, message: "Не следует, однако забывать, что консультация с широким активом " },
 					],
 				},
 				{
@@ -54,9 +54,9 @@ const store = {
 					img:
 						"https://shopsticker.ru/image/cache/catalog/image/rock/1-800x800.png",
 					messageData: [
-						{ id: 1, message: "Привет Дмитрий" },
-						{ id: 2, message: "Добрый день Дмитрий" },
-						{ id: 3, message: "Разработка на реакт" },
+						{ id: 1, message: "Аригато Дмитрий" },
+						{ id: 2, message: "С другой стороны постоянный количественный рост" },
+						{ id: 3, message: "Равным образом реализация намеченных плановых заданий требуют определения и уточнения форм развития." },
 					],
 				},
 				{
@@ -65,9 +65,9 @@ const store = {
 					img:
 						"https://avatarko.ru/img/avatar/3/devushka_brunetka_2748.jpg",
 					messageData: [
-						{ id: 1, message: "Привет Мария" },
-						{ id: 2, message: "Добрый де Мариянь" },
-						{ id: 3, message: "Разработка на реакт" },
+						{ id: 1, message: "Бонжур Мария" },
+						{ id: 2, message: "Разнообразный и богатый опыт сложившаяся структура" },
+						{ id: 3, message: "Таким образом начало повседневной работы" },
 					],
 				},
 			],

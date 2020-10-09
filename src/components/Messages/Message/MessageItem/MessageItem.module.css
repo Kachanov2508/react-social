@@ -1,0 +1,11 @@
+.item {
+   display: block;
+   background-color: #f7f7f7;
+   padding: 7px 15px;
+   border-radius: 8px;
+   margin-bottom: 10px;
+}
+
+.item:nth-child(even) {
+   align-self: flex-end;
+}

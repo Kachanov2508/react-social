@@ -1,10 +1,11 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import classes from "./DialogItem.module.css";
+import classes from "./Users.module.css";
 
-const DialogItem = (props) => {
+const Users = (props) => {
+
 	return (
-		<div className={classes.dialog}>
+		<div className={classes.users}>
 			<NavLink to={`/dialogs/${props.id}`} activeClassName={classes.active}>
 				<figure>
 					<img src={props.img} alt={`${props.name} ${props.id}`}/>
@@ -15,4 +16,4 @@ const DialogItem = (props) => {
 	);
 };
 
-export default DialogItem;
+export default Users;

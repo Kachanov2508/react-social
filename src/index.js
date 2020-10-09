@@ -8,6 +8,7 @@ import * as serviceWorker from "./serviceWorker";
 // import {addPost, updateNewPostText, subscribe} from "./redux/state";
 
 const rerender = (state) => {
+
 	ReactDOM.render(
 		<React.StrictMode>
 			<App
@@ -22,6 +23,15 @@ const rerender = (state) => {
 rerender(store.getState());
 
 store.subscribe(rerender);
+
+// const test = () => {
+// 	let users = store._state.dialogPage.dialogsData
+// 	for(let i = 0; users.length > i; i++) {
+// 		users[i].messageData.map(item => console.log(item.message))
+// 	}
+// }
+
+// test();
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
