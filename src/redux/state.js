@@ -1,4 +1,6 @@
 const ADD_POST = "ADD-POST";
+const SEND_MESSAGE = "SEND-MESSAGE";
+const UPDATE_MESSAGE = "UPDATE_MESSAGE";
 const APDATE_NEW_POST_TEXT = "APDATE-NEW-POST-TEXT";
 
 const store = {
@@ -6,15 +8,23 @@ const store = {
 		dialogPage: {
 			dialogsData: [
 				{
-					id: "1",
+					id: 1,
 					name: "Татьяна",
 					img:
 						"https://avatarko.ru/img/avatar/28/devushka_brunetka_cosplay_27741.jpg",
 					messageData: [
 						{ id: 1, message: "Здравствуйте Татьяна" },
-						{ id: 2, message: "Разнообразный и богатый опыт укрепление ." },
-						{ id: 3, message: "Таким образом постоянный количественный рост и сфера нашей " },
+						{
+							id: 2,
+							message: "Разнообразный и богатый опыт укрепление .",
+						},
+						{
+							id: 3,
+							message:
+								"Таким образом постоянный количественный рост и сфера нашей ",
+						},
 					],
+					newMessageText: ""
 				},
 				{
 					id: 2,
@@ -24,8 +34,13 @@ const store = {
 					messageData: [
 						{ id: 1, message: "Привет Николай" },
 						{ id: 2, message: "Не следует, однако забывать" },
-						{ id: 3, message: "Идейные соображения высшего порядка, а также постоянный количественный рост и сфера нашей активности обеспечивает широкому кругу (специалистов) участие в формировании направлений прогрессивного развития." },
+						{
+							id: 3,
+							message:
+								"Идейные соображения высшего порядка, а также постоянный количественный рост и сфера нашей активности обеспечивает широкому кругу (специалистов) участие в формировании направлений прогрессивного развития.",
+						},
 					],
+					newMessageText: ""
 				},
 				{
 					id: 3,
@@ -33,9 +48,14 @@ const store = {
 					img: "https://avatarko.ru/img/avatar/1/Batman_siluet.jpg",
 					messageData: [
 						{ id: 1, message: "Хай Александра" },
-						{ id: 2, message: "Задача организации, в особенности же укрепление и развитие структуры " },
+						{
+							id: 2,
+							message:
+								"Задача организации, в особенности же укрепление и развитие структуры ",
+						},
 						{ id: 3, message: "Не следует, однако забывать" },
 					],
+					newMessageText: ""
 				},
 				{
 					id: 4,
@@ -44,9 +64,18 @@ const store = {
 						"https://avatarko.ru/img/avatar/4/siluet_volk_luna_3945.jpg",
 					messageData: [
 						{ id: 1, message: "Хелоу Евгений" },
-						{ id: 2, message: "Товарищи! постоянное информационно-пропагандистское " },
-						{ id: 3, message: "Не следует, однако забывать, что консультация с широким активом " },
+						{
+							id: 2,
+							message:
+								"Товарищи! постоянное информационно-пропагандистское ",
+						},
+						{
+							id: 3,
+							message:
+								"Не следует, однако забывать, что консультация с широким активом ",
+						},
 					],
+					newMessageText: ""
 				},
 				{
 					id: 5,
@@ -55,9 +84,17 @@ const store = {
 						"https://shopsticker.ru/image/cache/catalog/image/rock/1-800x800.png",
 					messageData: [
 						{ id: 1, message: "Аригато Дмитрий" },
-						{ id: 2, message: "С другой стороны постоянный количественный рост" },
-						{ id: 3, message: "Равным образом реализация намеченных плановых заданий требуют определения и уточнения форм развития." },
+						{
+							id: 2,
+							message: "С другой стороны постоянный количественный рост",
+						},
+						{
+							id: 3,
+							message:
+								"Равным образом реализация намеченных плановых заданий требуют определения и уточнения форм развития.",
+						},
 					],
+					newMessageText: ""
 				},
 				{
 					id: 6,
@@ -66,9 +103,17 @@ const store = {
 						"https://avatarko.ru/img/avatar/3/devushka_brunetka_2748.jpg",
 					messageData: [
 						{ id: 1, message: "Бонжур Мария" },
-						{ id: 2, message: "Разнообразный и богатый опыт сложившаяся структура" },
-						{ id: 3, message: "Таким образом начало повседневной работы" },
+						{
+							id: 2,
+							message:
+								"Разнообразный и богатый опыт сложившаяся структура",
+						},
+						{
+							id: 3,
+							message: "Таким образом начало повседневной работы",
+						},
 					],
+					newMessageText: ""
 				},
 			],
 		},
@@ -116,22 +161,6 @@ const store = {
 		this._callSubscriber = observer;
 	},
 
-	// dispatch(action) {
-	// 	if (action.type === "ADD-POST") {
-	// 		let newPost = {
-	// 			id: 5,
-	// 			message: this._state.profilePage.newPostText,
-	// 			likesCount: 0,
-	// 		};
-	// 		this._state.profilePage.postsData.push(newPost);
-	// 		this._state.profilePage.newPostText = "";
-	// 		this._callSubscriber(this._state);
-	// 	} else if (action.type === "APDATE-NEW-POST-TEX") {
-	// 		this._state.profilePage.newPostText = action.newText;zzAZAA
-	// 		this._callSubscriber(this._state);
-	// 	}
-	// },
-
 	dispatch(action) {
 		switch (action.type) {
 			case ADD_POST:
@@ -144,12 +173,24 @@ const store = {
 				this._state.profilePage.newPostText = "";
 				this._callSubscriber(this._state);
 				break;
-
 			case APDATE_NEW_POST_TEXT:
 				this._state.profilePage.newPostText = action.newText;
 				this._callSubscriber(this._state);
 				break;
-
+			case SEND_MESSAGE:
+				let newMessage = {
+					id: 7,
+					message: action.sendMessage,
+				};
+				this._state.dialogPage.dialogsData[action.id].messageData.push(
+					newMessage
+				);
+				this._callSubscriber(this._state);
+				break;
+			case UPDATE_MESSAGE:
+				this._state.dialogPage.dialogsData[action.id].newMessageText = action.newMessageText
+				this._callSubscriber(this._state);
+				break;
 			default:
 				break;
 		}
@@ -168,5 +209,20 @@ export const apdateNewPostTexActionCreator = (text) => {
 		newText: text,
 	};
 };
+export const sendNewMessageActionCreator = (id, sendMessage) => {
+	return {
+		type: SEND_MESSAGE,
+		id,
+		sendMessage,
+	};
+};
+export const updateNewMessageTextActionCreator = (id, newMessageText) => {
+	return {
+		type: UPDATE_MESSAGE,
+		id,
+		newMessageText
+	}
+}
+
 
 // action это обьект у которого обязательно есть свойство type

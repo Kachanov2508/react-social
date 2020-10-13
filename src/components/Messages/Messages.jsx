@@ -13,7 +13,7 @@ const Messages = (props) => {
 		/>
 	));
 	const messageElements = props.dialogPage.dialogsData.map((user) => (
-		<Message user={user.messageData} key={user.id} path={user.id}/>
+		<Message user={user.messageData} key={user.id} path={user.id} dispatch={props.dispatch} id={user.id} newMessageText={user.newMessageText}/>
 	));
 
 	return (
