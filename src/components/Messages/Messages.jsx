@@ -24,4 +24,4 @@ const Messages = (props) => {
 	);
 };
 
-export default Messages;
+export default Messages; 

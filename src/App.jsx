@@ -7,7 +7,7 @@ import Messages from "./components/Messages/Messages";
 import { BrowserRouter, Route } from "react-router-dom";
 
 const App = (props) => {
-
+	debugger
 	return (
 		<BrowserRouter>
 			<div className="app-wrapper">
@@ -17,10 +17,7 @@ const App = (props) => {
 					<Route
 						path="/profile"
 						render={() => (
-							<Profile
-								profilePage={props.state.profilePage}
-								dispatch={props.dispatch}
-							/>
+							<Profile store={props.store}/>
 						)}
 					/>
 					<Route

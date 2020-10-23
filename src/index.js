@@ -1,5 +1,5 @@
 import "./index.css";
-import store from "./redux/state";
+import store from "./redux/redux-store";
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
@@ -13,7 +13,8 @@ const rerender = (state) => {
 		<React.StrictMode>
 			<App
 				state={state}
-				dispatch={store.dispatch.bind(store)}
+				dispatch={store.dispatch.bind(store)} 
+				store={store}
 			/>
 		</React.StrictMode>,
 		document.getElementById("root")
@@ -22,7 +23,10 @@ const rerender = (state) => {
 
 rerender(store.getState());
 
-store.subscribe(rerender);
+store.subscribe(() => {
+	let state = store.getState()
+	rerender(state)
+});
 
 // const test = () => {
 // 	let users = store._state.dialogPage.dialogsData
