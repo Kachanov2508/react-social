@@ -26,7 +26,7 @@ rerender(store.getState());
 store.subscribe(() => {
 	let state = store.getState()
 	rerender(state)
-});
+}); 
 
 // const test = () => {
 // 	let users = store._state.dialogPage.dialogsData
