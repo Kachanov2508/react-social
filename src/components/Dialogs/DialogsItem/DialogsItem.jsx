@@ -1,14 +1,14 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import classes from "./Users.module.css";
+import classes from "./DialogsItem.module.css";
 
-const Users = (props) => {
+const DialogsItem = (props) => {
 
 	return (
 		<div className={classes.users}>
 			<NavLink to={`/dialogs/${props.id}`} activeClassName={classes.active}>
 				<figure>
-					<img src={props.img} alt={`${props.name} ${props.id}`}/>
+					<img src={props.avatar} alt={`${props.name} ${props.id}`}/>
 				</figure>
 				{props.name}
 			</NavLink>
@@ -16,4 +16,4 @@ const Users = (props) => {
 	);
 };
 
-export default Users;
+export default DialogsItem;
