@@ -47,37 +47,42 @@ let initialState = {
 		{ id: 5, message: "arigato" },
 	],
 	newMessageBody: "",
-}
-
-const dialogsReducer = (state = initialState, action) => {
-	switch (action.type) {
-		case APDATE_NEW_MESSAGE_BODY:
-			state.newMessageBody = action.body;
-			break;
-		case SEND_MESSAGE:
-			let body = state.newMessageBody;
-			state.newMessageBody = "";
-			state.messages.push({ id: 6, message: body });
-			break;
-		default:
-			break;
-	}
-	return state;
 };
 
-export const sendNewMessageActionCreator = (id, sendMessage) => {
+const dialogsReducer = (state = initialState, action) => {
+
+	switch (action.type) {
+		case APDATE_NEW_MESSAGE_BODY:
+			return {
+				...state,
+				newMessageBody: action.body
+			};
+
+		case SEND_MESSAGE:
+			let body = state.newMessageBody;
+			return {
+				...state,
+				newMessageBody: "",
+				messages: [...state.messages, { id: 6, message: body }],
+			};
+		default:
+			return state;
+	}
+	
+};
+
+export const sendMessageCreator = (id, sendMessage) => {
 	return {
 		type: SEND_MESSAGE,
 		id,
 		sendMessage,
 	};
 };
-export const updateNewMessageTextActionCreator = (id, newMessageText) => {
+export const updateNewMessageBodyCreator = (body) => {
 	return {
 		type: APDATE_NEW_MESSAGE_BODY,
-		id,
-		newMessageText
-	}
-}
+		body: body,
+	};
+};
 
 export default dialogsReducer;
