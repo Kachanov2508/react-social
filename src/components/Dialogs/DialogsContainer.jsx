@@ -4,30 +4,12 @@ import {
 	sendMessageCreator,
 } from "../../redux/dialogs-reducer";
 import Dialogs from "./Dialogs";
-
-// const DialogsContainer = (props) => {
-// 	let state = props.store.getState().dialogsPage;
-
-// 	let onSandMessageClick = () => {
-// 		props.store.dispatch(sendMessageCreator());
-// 	};
-
-// 	let onNewMessageChange = (body) => {
-// 		props.store.dispatch(updateNewMessageBodyCreator(body));
-// 	};
-
-// 	return (
-// 		<Dialogs
-// 			updateNewMessageBody={onNewMessageChange}
-// 			sandMessage={onSandMessageClick}
-// 			dialogsPage={state}
-// 		/>
-// 	);
-// };
+import withAuthRedirect from "../../hoc/withAuthRedirect"
 
 let mapStateToProps = (state) => {
 	return {
 		dialogsPage: state.dialogsPage,
+		isAuth: state.auth.isAuth
 	};
 };
 
@@ -42,6 +24,8 @@ let mapDispatchToProps = (dispatch) => {
 	};
 };
 
-const DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(Dialogs);
+let AuthRedirectComponent = withAuthRedirect(Dialogs)
+
+const DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(AuthRedirectComponent);
 
 export default DialogsContainer;
