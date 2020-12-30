@@ -6,7 +6,6 @@ import { withRouter } from 'react-router-dom';
 import withAuthRedirect from "../../hoc/withAuthRedirect"
 
 
-
 export class ProfileContainer extends Component {
 
 	componentDidMount() {
@@ -17,9 +16,7 @@ export class ProfileContainer extends Component {
 	}
 
 	render() {
-
-
-
+		
 		return (
 			<Profile {...this.props}
 			profile={this.props.profile}
@@ -32,12 +29,13 @@ export class ProfileContainer extends Component {
 let AuthRedirectComponent = withAuthRedirect(ProfileContainer)
 
 const mapStateToProps = (state) => {
+	
 	return {
 		profile: state.profilePage.profile,
 		isAuth: state.auth.isAuth,
 		status: state.profilePage.status,
 		authorizedUserId: state.auth.userId,
-		// isAuth: state.auth.isAuth 
+		// isAuth: state.auth.isAuth
 	}
 }
 

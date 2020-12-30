@@ -3,6 +3,7 @@ import Users from "./Users";
 import { connect } from 'react-redux';
 import { follow, unfollow, setCurrentPage, setTotalUsersCount, toggleFollowingProgress, getUsers } from "../../redux/users-reducer";
 import Preloader from "../common/Preloader/Preloader";
+import { getUsersSelector, getPageSizeSelector, getTotalUsersCountSelector, getCurrentPageSelector, getIsFetchingSelector, getFollowingProgressSelector } from '../../redux/users-selectors';
 
 class UsersContainer extends React.Component {
 
@@ -16,6 +17,7 @@ class UsersContainer extends React.Component {
     }
 
     render() {
+        console.log("Render Users")
         return <>
             {this.props.isFetching ? <Preloader /> : null}
             <Users
@@ -32,16 +34,30 @@ class UsersContainer extends React.Component {
     }
 }
 
+
 const mapStateToProps = (state) => {
+    console.log("MapStateToProps Users")
     return {
-        users: state.usersPage.users,
-        pageSize: state.usersPage.pageSize,
-        totalUsersCount: state.usersPage.totalUsersCount,
-        currentPage: state.usersPage.currentPage,
-        isFetching: state.usersPage.isFetching,
-        followingProgress: state.usersPage.followingProgress
+        // Селекторы - функция которая принимает state и возвращает значение
+        users: getUsersSelector(state),
+        pageSize: getPageSizeSelector(state),
+        totalUsersCount: getTotalUsersCountSelector(state),
+        currentPage: getCurrentPageSelector(state),
+        isFetching: getIsFetchingSelector(state),
+        followingProgress: getFollowingProgressSelector(state)
     }
 }
+
+// const mapStateToProps = (state) => {
+//     return {
+//         users: state.usersPage.users,
+//         pageSize: state.usersPage.pageSize,
+//         totalUsersCount: state.usersPage.totalUsersCount,
+//         currentPage: state.usersPage.currentPage,
+//         isFetching: state.usersPage.isFetching,
+//         followingProgress: state.usersPage.followingProgress
+//     }
+// }
 
 // const mapDispatchToProps = (dispatch) => {
 //     return {
